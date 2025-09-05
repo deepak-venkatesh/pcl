@@ -3,10 +3,9 @@
 This repo has my notes and code as I work through *Practical Common Lisp* by Peter Seibel.
 The book has generously been made available freely by the author: https://gigamonkeys.com/book/
 
-- `examples.lisp` → code I typed from the book  
-- `variations.lisp` → experiments I tried  
+- `examples.lisp` → code I typed from the book with some experiements I tried
 - `notes.md` → explanations or reminders for myself
-- `exercises.lisp` → exercises I have made for other learners
+- `exercises.lisp` → exercises I have made for myself and other learners
 
 ### Chapters I’ve covered:
 - Chapter 01: Introduction: Why Lisp?
