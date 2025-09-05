@@ -9,8 +9,8 @@ The book has generously been made available freely by the author: https://gigamo
 - `exercises.lisp` → exercises I have made for other learners
 
 Chapters I’ve covered:
-- Chapter 1: Introduction: Why Lisp?
-- Chapter 2: Lather, Rinse, Repeat: A Tour of the REPL
+- Chapter 01: Introduction: Why Lisp?
+- Chapter 02: Lather, Rinse, Repeat: A Tour of the REPL
 
 
 ### I am using the following
