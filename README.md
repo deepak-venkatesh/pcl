@@ -17,3 +17,4 @@ The book has generously been made available freely by the author: https://gigamo
 - Quicklisp
 - Emacs
 - SLIME
+- On a Macbook
