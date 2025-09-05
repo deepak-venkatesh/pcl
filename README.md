@@ -18,3 +18,4 @@ The book has generously been made available freely by the author: https://gigamo
 - Emacs
 - SLIME
 - On a Macbook
+- I have also studied cover to cover the book *Common Lisp: A Gentle Introduction to Symbolic Computing* 2nd ed. by David Touretzky. I highly recommend this as the first book to learn Lisp, rather any programming language.
