@@ -22,5 +22,6 @@ I am using a Macbook, so C is Control key, M is Option key and C-x means pressin
 ## Important Links
 
 Quicklisp: https://www.quicklisp.org/beta/
+
 SBCL: https://www.sbcl.org/
 
