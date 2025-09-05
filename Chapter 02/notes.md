@@ -16,10 +16,7 @@ C-c C-c to Interrupt the Evaluation
 
 C-c C-b to Abort All Background Operations
 
-I am using a Macbook, so
-C is Control key
-M is Option key
-C-x means pressing Control and x (alphabet) together sequentially
+I am using a Macbook, so C is Control key, M is Option key and C-x means pressing Control and x (alphabet) together sequentially
 
 
 ## Important Links
