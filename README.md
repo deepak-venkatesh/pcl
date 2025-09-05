@@ -8,7 +8,7 @@ The book has generously been made available freely by the author: https://gigamo
 - `notes.md` → explanations or reminders for myself
 - `exercises.lisp` → exercises I have made for other learners
 
-Chapters I’ve covered:
+### Chapters I’ve covered:
 - Chapter 01: Introduction: Why Lisp?
 - Chapter 02: Lather, Rinse, Repeat: A Tour of the REPL
 
