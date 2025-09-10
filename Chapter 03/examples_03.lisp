@@ -81,3 +81,13 @@
    #'(lambda (cd) (equal (getf cd :artist) artist)) ;(select-by-artist '"Dire Straits")
    *db*))
 
+(defun select (selector-fn)
+  (remove-if-not selector-fn *db*))
+
+(select #'(lambda (cd) (equal (getf cd :artist) "Bon Jovi")))
+
+(defun artist-selector (artist)
+  #'(lambda (cd) (equal (getf cd :artist) artist)))
+
+(select (artist-selector '"Bon Jovi"))
+
