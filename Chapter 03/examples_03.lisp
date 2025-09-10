@@ -39,3 +39,22 @@
   (format *query-io* "~a: " prompt)
   (force-output *query-io*)
   (read-line *query-io*))
+
+(defun prompt-for-cd-firstcut ()
+  (make-cd
+  (prompt-read "Title")
+  (prompt-read "Artist")
+  (prompt-read "Rating")
+  (prompt-read "Ripped [y/n]")))
+
+(defun prompt-for-cd ()
+  (make-cd
+   (prompt-read "Title")
+   (prompt-read "Artist")
+   (or (parse-integer (prompt-read "Rating") :junk-allowed t) 0)
+   (y-or-n-p "Ripped [y/n]")))
+
+(defun add-cds ()
+  (loop (add-record (prompt-for-cd))
+	(if (not (y-or-n-p "Another [y/n]: ")) (return))))
+
