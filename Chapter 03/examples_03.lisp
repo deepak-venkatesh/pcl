@@ -58,3 +58,26 @@
   (loop (add-record (prompt-for-cd))
 	(if (not (y-or-n-p "Another [y/n]: ")) (return))))
 
+(defun save-db (filename)    ;/Users/deepak/programming/PCL/my-cds.db
+  (with-open-file (out filename
+		       :direction :output
+		       :if-exists :supersede)
+    (with-standard-io-syntax
+      (print *db* out))))
+
+(defun load-db (filename)
+  (with-open-file (in filename)
+    (with-standard-io-syntax
+      (setf *db* (read in)))))
+
+(remove-if-not #'evenp '(1 2 3 4 5 6 7 8 9 10))
+
+(remove-if-not #'(lambda (x) (= 0 (mod x 2))) '(1 2 3 4 5 6 7 8 9 10))
+
+(remove-if-not #'(lambda (x) (= 1 (mod x 2))) '(1 2 3 4 5 6 7 8 9 10))
+
+(defun select-by-artist (artist)
+  (remove-if-not
+   #'(lambda (cd) (equal (getf cd :artist) artist)) ;(select-by-artist '"Dire Straits")
+   *db*))
+
