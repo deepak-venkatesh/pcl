@@ -91,3 +91,13 @@
 
 (select (artist-selector '"Bon Jovi"))
 
+(defun foo (a b c) (list a b c))
+
+(defun foo (&key a b c) (list a b c))
+
+(foo :a 1 :b 2 :c 3)
+
+(foo :a 1 :c 3)
+
+(foo)
+
