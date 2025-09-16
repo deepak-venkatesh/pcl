@@ -101,3 +101,30 @@
 
 (foo)
 
+(defun foo-1 (&key a (b 20) (c 30 c-p)) (list a b c c-p))
+
+(defun where (&key title artist rating (ripped nil ripped-p))
+  #'(lambda (cd)
+      (and
+       (if title (equal (getf cd :title) title) t)
+       (if artist (equal (getf cd :artist) artist) t)
+       (if rating (equal (getf cd :rating) rating) t)
+       (if ripped-p (equal (getf cd :ripped) ripped) t))))
+
+(defun update (selector-fn &key title artist rating (ripped nil ripped-p))
+  (setf *db*
+	(mapcar
+	 #'(lambda (row)
+	     (when (funcall selector-fn row)
+	       (if title (setf (getf row :title) title))
+	       (if artist (setf (getf row :artist) artist))
+	       (if rating (setf (getf row :rating) rating))
+	       (if ripped-p (setf (getf row :ripped) ripped)))
+	     row) *db*)))
+
+(update (where :artist "Savage Garden") :rating 5)
+
+(defun delete-rows (selector-fn)
+  (setf *db* (remove-if selector-fn *db*)))
+
+
