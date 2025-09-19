@@ -127,4 +127,28 @@
 (defun delete-rows (selector-fn)
   (setf *db* (remove-if selector-fn *db*)))
 
+(reverse '(1 2 3))
 
+(defmacro backwards (expr) (reverse expr))
+
+(defun make-comparison-expr (field value)
+  (list 'equal (list 'getf 'cd field) value))
+
+(make-comparison-expr :rating 10)
+
+`(1 2 (+ 1 2))  ; (1 2 (+ 1 2)) 
+'(1 2 (+ 1 2))  ; (1 2 (+ 1 2))
+'(1 2 ,(+ 1 2)) ; Evaluation aborted on #<SB-INT:SIMPLE-READER-ERROR "Comma not inside a backquote." {10048CCFA3}>.
+`(1 2 ,(+ 1 2)) ; (1 2 3)
+
+(defun make-comparison-expr (field value)
+  `(equal (getf cd ,field) ,value))
+
+(defun make-comparisons-list (fields)
+  (loop while fields
+	collecting (make-comparison-expr (pop fields) (pop fields))))
+(defmacro where (&rest clauses)
+  `#'(lambda (cd) (and ,@(make-comparisons-list clauses))))
+
+`(and ,(list 1 2 3))    ;(AND (1 2 3))
+`(and ,@(list 1 2 3))   ;(AND 1 2 3)
