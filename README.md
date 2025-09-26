@@ -10,6 +10,8 @@ The book has generously been made available freely by the author: https://gigamo
 ### Chapters I’ve covered:
 - Chapter 01: Introduction: Why Lisp?
 - Chapter 02: Lather, Rinse, Repeat: A Tour of the REPL
+- Chapter 03: Practical: A Simple Database
+- Chapter 04: Syntax and Semantics
 
 
 ### I am using the following
